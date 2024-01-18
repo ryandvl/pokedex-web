@@ -11,12 +11,12 @@
   - [ ] Theme Switcher
 
 - [ ] **Left Panel**:
-  - [ ] Filter `Generation`
+  - [ ] **Filter Generation**:
     - [ ] I - IX
 
   - [ ] Filter `Pokédex Region`
 
-  - [ ] Filter `Pokémon`
+  - [ ] **Filter Pokémon**:
     - [ ] `Egg Group`
     - [ ] `Gender`
     - [ ] `Growth Rate`
@@ -28,7 +28,12 @@
 
 - [ ] **Cards**:
   - [ ] Name
+  - [ ] Icon
   - [ ] Click to view `Pokémon` informations
+  - [ ] **Hover**:
+    - [ ] Type
+    - [ ] Weight
+    - [ ] Height
 
 - [ ] **Theme Switcher**: Light & Dark
 
