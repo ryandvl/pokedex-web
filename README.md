@@ -35,12 +35,28 @@
     - [ ] Weight
     - [ ] Height
 
+- [ ] **Informations (Route pokedex/<pokemon>)**:
+  - [ ] Default
+  - [ ] Name
+  - [ ] Type
+  - [ ] Weight
+  - [ ] Height
+  - [ ] Abilities
+  - [ ] Forms
+  - [ ] Moves
+  - [ ] Sprites (Image)
+  - [ ] Stats
+  - [ ] Location
+  - [ ] Game Indices
+
 - [ ] **Theme Switcher**: Light & Dark
 
 ### Backend
 
-- [ ] **Fetch API**: [pokeapi.co](https://pokeapi.co)
-
+- [x] **Fetch API**: [pokeapi.co](https://pokeapi.co)
+- [x] API Class
+- [x] Pokémon Rote
+- [ ] Pokémon Informations Direct Rotes
 
 ## Annotations
 
