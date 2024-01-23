@@ -14,7 +14,7 @@ export async function generateMetadata(
 ): Promise<Metadata> {
   var pokemon = await fetchPokemon(params.id);
 
-  if (!pokemon)
+  if (!pokemon || !pokemon.name)
     return {
       title: "Not Found • Pokédex",
       description: "Not Found",

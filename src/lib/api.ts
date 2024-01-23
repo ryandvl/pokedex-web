@@ -9,19 +9,31 @@ async function verifyRegex(string: string | number) {
 }
 
 // Fetch data from PokeAPI
-async function fetchData(type: type, id: id) {
-  if(!verifyRegex(type) || !verifyRegex(id)) return undefined
+async function fetchData(type: type, id: id, isRoute: boolean = true) {
+  if (!verifyRegex(type) || (!isRoute && !verifyRegex(id))) return undefined;
   try {
-    const response = await fetch(`https://pokeapi.co/api/v2/${type}/${id}`);
+    let endpoint = `${type}`;
+    if (isRoute) endpoint += `/${id}`;
+    else endpoint += `${id}`;
+
+    const response = await fetch(`https://pokeapi.co/api/v2/${endpoint}`);
 
     const data = await response.json();
 
     return data;
   } catch (error) {
+    console.log("Error");
     return undefined;
   }
 }
 
 export async function fetchPokemon(id: id) {
-  return fetchData('pokemon', id);
+  return fetchData("pokemon", id);
+}
+
+export async function fetchPokemons(
+  limit: number = 1000000,
+  offset: number = 0
+) {
+  return fetchData("pokemon", `?limit=${limit}&offset=${offset}`, false);
 }
