@@ -19,6 +19,6 @@ export default function ThemeSwitcher() {
     <button
       className="bg-gray-500 dark:bg-gray-900 rounded h-16 w-16 transition-colors"
       onClick={handleThemeSwitcher}
-    />
+    ></button>
   );
 }

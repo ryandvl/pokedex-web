@@ -1,3 +1,5 @@
+import { FetchPokemonsDataProps, PokemonProps } from "./apiSchema";
+
 type type = string;
 type id = string | number;
 
@@ -8,7 +10,13 @@ async function verifyRegex(string: string | number) {
   return pattern.test(string.toString());
 }
 
-// Fetch data from PokeAPI
+/**
+ * Fetch Data from PokeAPI
+ * @param type Endpoint type
+ * @param id Id to find in type or endpoint
+ * @param isRoute Is route endpoint
+ * @returns
+ */
 async function fetchData(type: type, id: id, isRoute: boolean = true) {
   if (!verifyRegex(type) || (!isRoute && !verifyRegex(id))) return undefined;
   try {
@@ -22,18 +30,18 @@ async function fetchData(type: type, id: id, isRoute: boolean = true) {
 
     return data;
   } catch (error) {
-    console.log("Error");
+    console.log(`Error: ${type}, ${id}, ${isRoute}`);
     return undefined;
   }
 }
 
-export async function fetchPokemon(id: id) {
+export async function fetchPokemon(id: id): Promise<PokemonProps> {
   return fetchData("pokemon", id);
 }
 
 export async function fetchPokemons(
   limit: number = 1000000,
   offset: number = 0
-) {
+): Promise<FetchPokemonsDataProps> {
   return fetchData("pokemon", `?limit=${limit}&offset=${offset}`, false);
 }

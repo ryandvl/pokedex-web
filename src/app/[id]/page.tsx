@@ -12,13 +12,16 @@ export async function generateMetadata(
   { params }: PageProps,
   parent: ResolvingMetadata
 ): Promise<Metadata> {
+  const notfound = {
+    title: "Not Found • Pokédex",
+    description: "Not Found",
+  };
+
+  if (!params.id || params.id == "favicon.ico") return notfound;
+
   var pokemon = await fetchPokemon(params.id);
 
-  if (!pokemon || !pokemon.name)
-    return {
-      title: "Not Found • Pokédex",
-      description: "Not Found",
-    };
+  if (!pokemon || !pokemon.name) return notfound;
 
   return {
     title: `${firstUpperCase(pokemon.name)} • Pokédex`,
@@ -27,6 +30,7 @@ export async function generateMetadata(
 }
 
 export default async function Page({ params }: PageProps) {
+  if (!params.id || params.id == "favicon.ico") return notFound();
   var pokemon = await fetchPokemon(params.id);
 
   if (!pokemon) return notFound();
