@@ -1,8 +1,10 @@
 "use client";
+import { Moon, Sun } from "lucide-react";
 import { useEffect, useState } from "react";
 
 export default function ThemeSwitcher() {
   const [active, setActive] = useState(false);
+  const [cooldown, setCooldown] = useState(false);
 
   useEffect(() => {
     setActive(window.matchMedia("(prefers-color-scheme: dark)").matches);
@@ -13,12 +15,28 @@ export default function ThemeSwitcher() {
     else document.documentElement.classList.remove("dark");
   }, [active]);
 
-  const handleThemeSwitcher = () => setActive(!active);
+  const handleThemeSwitcher = () => {
+    if (cooldown) return;
+
+    setCooldown(true);
+
+    setActive(!active);
+
+    setTimeout(() => {
+      setCooldown(false);
+    }, 1000);
+  };
 
   return (
     <button
-      className="bg-gray-500 dark:bg-gray-900 rounded h-16 w-16 transition-colors"
+      className="dark:bg-[#2b2b2b] rounded-full h-16 w-16 transition-colors flex justify-center align-middle"
       onClick={handleThemeSwitcher}
-    ></button>
+    >
+      {active ? (
+        <Moon className="w-6 h-6 text-white transition-colors flex" />
+      ) : (
+        <Sun className="w-6 h-6 text-black transition-colors flex" />
+      )}
+    </button>
   );
 }

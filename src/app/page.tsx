@@ -4,7 +4,7 @@ import Header from "@/components/Header";
 import LeftPanel from "@/components/LeftPanel";
 import PokemonCard from "@/components/PokemonCard";
 import { fetchPokemons } from "@/lib/api";
-import { PokemonsDataProps } from "@/lib/apiSchema";
+import { PokemonsDataProps } from "@/lib/ApiSchema";
 import { useEffect, useState } from "react";
 
 export default function Home() {
