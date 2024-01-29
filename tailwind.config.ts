@@ -10,14 +10,18 @@ const config: Config = {
   theme: {
     extend: {
       boxShadow: {
-        lightBorderY: "0px 2px 1px #ccc;",
-        darkBorderY: "0px 2px 1px #3d3d3d;",
-        lightBorderX: "2px 0px 1px #ccc;",
-        darkBorderX: "2px 0px 1px #3d3d3d;",
+        lightBorderY: "0px 1px 1px #ccc;",
+        darkBorderY: "0px 1px 1px #3d3d3d;",
+        lightBorderX: "1px 0px 1px #ccc;",
+        darkBorderX: "1px 0px 1px #3d3d3d;",
       },
       backgroundColor: {
         lightMode: "#ffffff",
-        darkMode: "#161616",
+        darkMode: "#0a0a0a",
+      },
+      textColor: {
+        lightMode: "black",
+        darkMode: "white",
       },
     },
   },

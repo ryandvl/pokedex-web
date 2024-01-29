@@ -142,6 +142,5 @@ export function getPokemonColor(pokemon: PokemonProps) {
 
   var pokemonType = PokemonTypes[pokemon.types[0].type.name];
 
-  console.log(pokemonType);
   return pokemonType.color;
 }

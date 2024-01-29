@@ -7,7 +7,10 @@ export default function ThemeSwitcher() {
   const [cooldown, setCooldown] = useState(false);
 
   useEffect(() => {
-    setActive(window.matchMedia("(prefers-color-scheme: dark)").matches);
+    var theme = localStorage.getItem("theme") == "dark";
+    setActive(
+      theme ?? window.matchMedia("(prefers-color-scheme: dark)").matches
+    );
   }, []);
 
   useEffect(() => {
@@ -21,6 +24,7 @@ export default function ThemeSwitcher() {
     setCooldown(true);
 
     setActive(!active);
+    localStorage.setItem("theme", active ? "light" : "dark");
 
     setTimeout(() => {
       setCooldown(false);
@@ -29,13 +33,13 @@ export default function ThemeSwitcher() {
 
   return (
     <button
-      className="dark:bg-[#2b2b2b] rounded-full h-16 w-16 transition-colors flex justify-center align-middle"
+      className="rounded-lg h-10 w-10 transition-colors flex justify-center items-center border-2 border-gray-500"
       onClick={handleThemeSwitcher}
     >
       {active ? (
-        <Moon className="w-6 h-6 text-white transition-colors flex" />
+        <Moon className="w-7 h-7 text-white transition-colors flex" />
       ) : (
-        <Sun className="w-6 h-6 text-black transition-colors flex" />
+        <Sun className="w-7 h-7 text-black transition-colors flex" />
       )}
     </button>
   );

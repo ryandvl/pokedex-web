@@ -1,6 +1,6 @@
 "use client";
 import FilterPanel from "@/components/FilterPanel";
-import Header from "@/components/Header";
+import Header from "@/components/header/Header";
 import LeftPanel from "@/components/LeftPanel";
 import PokemonCard from "@/components/PokemonCard";
 import { fetchPokemons } from "@/lib/api";

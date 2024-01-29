@@ -1,8 +1,9 @@
+import Image from "next/image";
+import { useEffect, useState } from "react";
+
 import { fetchPokemon, getPokemonColor } from "@/lib/api";
 import { PokemonProps } from "@/lib/ApiSchema";
 import { firstUpperCase } from "@/lib/utils";
-import Image from "next/image";
-import { createElement, useEffect, useState } from "react";
 
 export default function PokemonCard({ pokemonName }: { pokemonName: string }) {
   const [pokemon, setPokemon] = useState<PokemonProps>();
@@ -26,9 +27,6 @@ export default function PokemonCard({ pokemonName }: { pokemonName: string }) {
 
   return (
     <>
-      {loaded === false && (
-        <div className="bg-gray-950 dark:bg-gray-800 w-56 h-80"></div>
-      )}
       {loaded === true && pokemon && (
         <div className="w-[12rem] h-[15rem] box-border m-10 rounded-2xl transition-colors block">
           <div className="w-full h-full justify-center block p-5">
