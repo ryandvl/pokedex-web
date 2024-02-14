@@ -1,4 +1,4 @@
-import { FetchPokemonsDataProps, PokemonProps } from "./ApiSchema";
+import { FetchPokemonsDataProps, PokemonProps } from "../types/api-schema";
 
 type type = string;
 type id = string | number;

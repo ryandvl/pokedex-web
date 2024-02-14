@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import "@/styles/globals.css";
+import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -17,7 +17,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${inter.className} flex bg-lightMode dark:bg-darkMode transition-colors`}
+        className={`${inter.className} flex bg-zinc-100 dark:bg-zinc-950 transition-colors px-10 py-8 gap-10`}
       >
         {children}
       </body>

@@ -15,14 +15,6 @@ const config: Config = {
         lightBorderX: "1px 0px 1px #ccc;",
         darkBorderX: "1px 0px 1px #3d3d3d;",
       },
-      backgroundColor: {
-        lightMode: "#ffffff",
-        darkMode: "#0a0a0a",
-      },
-      textColor: {
-        lightMode: "black",
-        darkMode: "white",
-      },
     },
   },
   plugins: [],

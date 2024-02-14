@@ -1,6 +1,7 @@
 "use client";
-import { Moon, Sun } from "lucide-react";
 import { useEffect, useState } from "react";
+
+import { MoonIcon, SunIcon } from "lucide-react";
 
 export default function ThemeSwitcher() {
   const [active, setActive] = useState(false);
@@ -33,13 +34,13 @@ export default function ThemeSwitcher() {
 
   return (
     <button
-      className="rounded-lg h-10 w-10 transition-colors flex justify-center items-center border-2 border-gray-500"
+      className="flex justify-center items-center"
       onClick={handleThemeSwitcher}
     >
       {active ? (
-        <Moon className="w-7 h-7 text-white transition-colors flex" />
+        <MoonIcon className="w-8 h-8 text-zinc-500 transition-colors flex" />
       ) : (
-        <Sun className="w-7 h-7 text-black transition-colors flex" />
+        <SunIcon className="w-8 h-8 text-black transition-colors flex" />
       )}
     </button>
   );
