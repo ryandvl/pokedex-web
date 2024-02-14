@@ -1,6 +1,8 @@
 {
-  "name": "pokedex",
+  "name": "pokedex-web",
+  "description": "Site to view pokédex pokemons more easily",
   "version": "0.1.0",
+  "author": "ryandvl",
   "private": true,
   "scripts": {
     "dev": "next dev",
